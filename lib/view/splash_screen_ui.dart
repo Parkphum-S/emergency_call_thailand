@@ -28,37 +28,48 @@ class _SplashScreenUIState extends State<SplashScreenUI> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CircleAvatar(
-              radius: 100.0,
-              backgroundColor: Colors.white,
-              backgroundImage: AssetImage(
-                'assets/images/call-center.png',
+      body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 246, 2, 2),
+              Color.fromARGB(255, 248, 139, 139),
+            ],
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                radius: 100.0,
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage(
+                  'assets/images/call-center.png',
+                ),
               ),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            Text(
-              'Emergency Call',
-              style: TextStyle(
-                fontSize: 30.0,
-                fontWeight: FontWeight.bold,
+              SizedBox(
+                height: 20.0,
+              ),
+              Text(
+                'Emergency Call',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                height: 25.0,
+              ),
+              CircularProgressIndicator(
                 color: Colors.white,
+                strokeWidth: 8.0,
               ),
-            ),
-            SizedBox(
-              height: 25.0,
-            ),
-            CircularProgressIndicator(
-              color: Colors.white,
-              strokeWidth: 8.0,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
